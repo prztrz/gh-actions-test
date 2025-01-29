@@ -1,0 +1,20 @@
+name: 'hehe'
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  hehe:
+    if: ${{ !startsWith(github.event.pull_request.base.ref, 'revert') }}
+    name: hehe
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Elo
+        shell: bash
+        env:
+            BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: |
+            echo "elo"
+
