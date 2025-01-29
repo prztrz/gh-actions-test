@@ -6,7 +6,7 @@ on:
 # 2
 jobs:
   hehe:
-    if: ${{ !startsWith(github.event.pull_request.base.ref, 'revert') }}
+    if: ${{ !startsWith( github.head_ref || github.ref_name, 'revert') }}
     name: hehe
     runs-on: ubuntu-latest
 
